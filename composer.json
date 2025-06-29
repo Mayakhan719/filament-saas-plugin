@@ -1,0 +1,80 @@
+{
+    "name": "mayakhan719/filament-saas-plugin",
+    "description": "Filement SaaS is a package that provides a set of tools and features to help you build multi-tenant SaaS applications using the Filament admin panel in Laravel.",
+    "keywords": [
+        "filament",
+        "saas",
+        "saas-plugin",
+        "laravel",
+        "multi-tenant",
+        "subscription",
+        "media-library",
+        "spatie",
+        "laravel-subscriptions"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mayakhan719",
+            "email": "maya719@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "filament/spatie-laravel-media-library-plugin": "^3.3",
+        "laravelcm/laravel-subscriptions": "^1.5",
+        "spatie/laravel-permission": "^6.0",
+        "stripe/stripe-php": "^17.3"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "nunomaduro/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.1",
+        "pestphp/pest-plugin-arch": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
+    },
+    "autoload": {
+        "psr-4": {
+            "Maya\\FilamentSaasPlugin\\": "src/",
+            "Maya\\FilamentSaasPlugin\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Maya\\FilamentSaasPlugin\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Maya\\FilamentSaasPlugin\\FilamentSaasPluginServiceProvider"
+            ],
+            "aliases": {
+                "FilamentSaasPlugin": "Maya\\FilamentSaasPlugin\\Facades\\FilamentSaasPlugin"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
