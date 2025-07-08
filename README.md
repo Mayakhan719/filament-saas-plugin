@@ -4,6 +4,11 @@ A Laravel + Filament plugin to add SaaS multi-tenant features like plans, subscr
 Supports **PSR-4 Autoloading**, **PSR-12 Coding Standards**, and is designed to work within Laravel's service container and event systems.
 
 ---
+![Alt text](ss/Plans.PNG)
+![Alt text](ss/Subscription.PNG)
+![Alt text](ss/Payment%20Gatways.PNG)
+![Alt text](ss/Payment%20selection.PNG)
+
 
 ## 📦 Installation
 
